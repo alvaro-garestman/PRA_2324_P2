@@ -1,4 +1,4 @@
-#ifndef DYV_H
+#ifndef DYV_Hd
 #define DYV_H
 
 #include <vector>
@@ -30,4 +30,13 @@ int BusquedaBinaria_INV(const T& x,const std::vector <T>& v, int ini, int fin) {
 	if (ini > fin)
 		return -1
 	int medio = (ini + fin) / 2;
-	if (v
+
+	if (v[medio] == x)
+		return medio;
+	if (v[medio] < x)
+		return BusquedaBinaria_INV(x, y, ini, medio - 1);
+	else
+		return BusquedaBinaria_INV(x,y, medio + 1, fin);
+}
+
+#endif
